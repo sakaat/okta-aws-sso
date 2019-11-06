@@ -1,0 +1,18 @@
+name: windows
+on: [push]
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: npm ci
+      - run: npm run tslint
+      - env:
+          AWS_USERNAME: ${{ secrets.AWS_USERNAME }}
+          OKTA_PASSWORD: ${{ secrets.OKTA_PASSWORD }}
+          OKTA_URL: ${{ secrets.OKTA_URL }}
+          OKTA_USERNAME: ${{ secrets.OKTA_USERNAME }}
+        run: npm run test

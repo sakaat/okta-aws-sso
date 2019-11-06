@@ -1,0 +1,19 @@
+{
+  "name": "okta-aws-sso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tslint": "npx tslint --project .",
+    "test": "npx testcafe ie -e --hostname localhost sso-test.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.6",
+    "testcafe": "^1.6.1",
+    "tslint": "^5.20.1",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typescript": "^3.7.2"
+  }
+}
