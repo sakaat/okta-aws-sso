@@ -5,13 +5,31 @@
   "main": "index.js",
   "scripts": {
     "tslint": "npx tslint --project .",
-    "test": "npx testcafe ie -e --hostname localhost sso-test.ts"
+    "testcafe": "npx testcafe ie -e --hostname localhost testcafe.ts",
+    "puppeteer": "npx jest puppeteer.test.ts"
+  },
+  "jest": {
+    "transform": {
+      ".*\\.(ts)$": "./node_modules/ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^24.0.22",
     "@types/node": "^12.12.6",
+    "@types/puppeteer": "^1.20.2",
+    "jest": "^24.9.0",
+    "puppeteer": "^2.0.0",
     "testcafe": "^1.6.1",
+    "ts-jest": "^24.1.0",
     "tslint": "^5.20.1",
     "tslint-microsoft-contrib": "^6.2.0",
     "typescript": "^3.7.2"
