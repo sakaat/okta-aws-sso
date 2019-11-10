@@ -16,3 +16,10 @@ jobs:
           OKTA_URL: ${{ secrets.OKTA_URL }}
           OKTA_USERNAME: ${{ secrets.OKTA_USERNAME }}
         run: npm run puppeteer
+      - env:
+          AWS_URL: ${{ secrets.AWS_URL }}
+          AWS_USERNAME: ${{ secrets.AWS_USERNAME }}
+          OKTA_PASSWORD: ${{ secrets.OKTA_PASSWORD }}
+          OKTA_URL: ${{ secrets.OKTA_URL }}
+          OKTA_USERNAME: ${{ secrets.OKTA_USERNAME }}
+        run: npm run codeceptjs
